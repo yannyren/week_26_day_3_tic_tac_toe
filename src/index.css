@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+table {
+  border: 3px black solid;
+  width: 500px;
+  height:500px
+}
+
+table tr {
+  border: 3px black solid;
+}
+
+table td {
+  border: 3px black solid;
+}
+
+button {
+  width: 160px;
+  height: 160px;
+  background-color: tomato;
+}
