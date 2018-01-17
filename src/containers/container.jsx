@@ -10,22 +10,28 @@ class Container extends React.Component {
     const game = new Game()
 
     this.state = {
-      game: game,
-      boardArray: game.boardArray
+      game: game
+    }
+
+    this.buttonClicked = this.buttonClicked.bind(this);
   }
 
   buttonClicked(evt) {
     console.log(evt.target.getAttribute('pos'));
-    game.playTurn(currentPlayer, pos);
+    const pos = evt.target.getAttribute('pos');
 
-    this.set({
-      boardArray: game.boardArray
-    })
+    this.state.game.playTurn(pos);
+
+    //update the state
+    //call render
+    this.setState({
+      game: this.state.game,
+    });
   }
 
   render(){
     return(
-    <GameBoard board={this.state.boardArray} buttonClicked={this.buttonClicked}/>
+    <GameBoard board={this.state.game.gameBoard} buttonClicked={this.buttonClicked}/>
     )
   }
 }
